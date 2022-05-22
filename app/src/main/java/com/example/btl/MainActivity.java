@@ -61,6 +61,8 @@ public class MainActivity extends AppCompatActivity {
         myViewPagerAdapter.addFragment(fragmenInfo);
 
         viewPager2.setAdapter(myViewPagerAdapter);
+
+        // Disable hieu ung swipe sang 2 ben cua viewpager2
         viewPager2.setUserInputEnabled(false);
     }
     private void initView() {

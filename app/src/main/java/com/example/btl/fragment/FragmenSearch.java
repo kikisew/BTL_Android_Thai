@@ -1,5 +1,6 @@
 package com.example.btl.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.btl.DetailArticleActivity;
 import com.example.btl.R;
 import com.example.btl.adapter.ArticleAdapter;
 import com.example.btl.model.Article;
@@ -70,6 +72,16 @@ public class FragmenSearch extends Fragment {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 return false;
+            }
+        });
+
+        // Bắt sự kiện bấm vào xem chi tiết 1 bài báo
+        articleAdapter.setItemClickedListener(new ArticleAdapter.ItemClickedListener() {
+            @Override
+            public void onItemClicked(Article article) {
+                Intent intent = new Intent(getActivity(), DetailArticleActivity.class);
+                intent.putExtra("article", article);
+                startActivity(intent);
             }
         });
     }
