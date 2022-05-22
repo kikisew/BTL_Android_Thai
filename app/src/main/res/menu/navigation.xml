@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/mHome"
-        android:title="Hom Nay"
-        android:icon="@drawable/ic_baseline_today_24"
+        android:title="Trang Chủ"
+        android:icon="@drawable/ic_home"
         />
     <item android:id="@+id/mHistory"
-        android:title="Lich Su"
-        android:icon="@drawable/ic_baseline_today_24"
+        android:title="Tìm Kiếm"
+        android:icon="@drawable/ic_find"
         />
     <item android:id="@+id/mSearch"
-        android:title="Tim Kiem"
+        android:title="Thông tin"
         android:icon="@drawable/ic_baseline_today_24"
         />
 </menu>

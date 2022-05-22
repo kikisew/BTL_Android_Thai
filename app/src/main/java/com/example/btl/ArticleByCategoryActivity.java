@@ -35,7 +35,7 @@ public class ArticleByCategoryActivity extends AppCompatActivity {
         Intent intentFromFragmentHome = getIntent();
         Category category = (Category) intentFromFragmentHome.getSerializableExtra("category");
         String categoryName = category.getName();
-        String slug = category.getSlug();
+        String id = category.getId();
 
         tvCategory.setText(categoryName);
 
@@ -43,7 +43,7 @@ public class ArticleByCategoryActivity extends AppCompatActivity {
         recyclerView.setAdapter(articleAdapter);
         recyclerView.setLayoutManager(new GridLayoutManager(this, 1));
 
-        APIUtils.getApiServiceInterface().getArticleBySlug(slug)
+        APIUtils.getApiServiceInterface().getArticleBySlug(id)
                 .enqueue(new Callback<List<Article>>() {
                     @Override
                     public void onResponse(Call<List<Article>> call, Response<List<Article>> response) {

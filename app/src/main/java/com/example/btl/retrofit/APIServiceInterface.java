@@ -29,8 +29,8 @@ public interface APIServiceInterface {
     @GET("category")
     Call<List<Category>> getAllCategories();
 
-    @GET("category/search")
-    Call<List<Article>> getArticleBySlug(@Query("category") String category);
+    @GET("article/categoryId")
+    Call<List<Article>> getArticleBySlug(@Query("id") String id);
 
     @GET("articles")
     Call<List<Article>> getAllArticles();

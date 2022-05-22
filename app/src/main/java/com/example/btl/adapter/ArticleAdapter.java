@@ -41,9 +41,10 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ArticleV
             // Glide load ảnh để hiển thị ra
             Glide.with(activity).load(article.getImg()).into(holder.imgArticle);
             holder.tvTitle.setText(article.getTitle());
-            if(article.getTimestamps() !=null) {
-                SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-                String date = sdf.format(article.getTimestamps());
+            if(article.getCreatedAt() !=null) {
+//                SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+//                String date = sdf.format(article.getCreatedAt());
+                String date = article.getCreatedAt().toString();
                 holder.tvDate.setText(date);
             }
             else holder.tvDate.setText("05/22/2022");

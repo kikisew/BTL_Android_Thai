@@ -30,9 +30,11 @@ public class DetailArticleActivity extends AppCompatActivity {
         Article article = (Article) intentFromFragmentHome.getSerializableExtra("article");
 
         tvTitle.setText(article.getTitle());
-        if(article.getTimestamps() !=null) {
-            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-            String date = sdf.format(article.getTimestamps());
+        if(article.getCreatedAt() !=null) {
+//            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+//            String date = sdf.format(article.getCreatedAt());
+            String date = article.getCreatedAt().toString();
+
             tvDate.setText(date);
         }
         else tvDate.setText("05/22/2022");

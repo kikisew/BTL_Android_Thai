@@ -1,5 +1,6 @@
 package com.example.btl.model;
 
+import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
@@ -14,10 +15,11 @@ public class Article implements Serializable {
     private String img;
     @SerializedName("content")
     private String content;
-    @SerializedName("timestamps")
-    private Date timestamps;
     @SerializedName("category")
     private String category;
+    @SerializedName("created_at")
+    private String createdAt;
+
 
     public Article(String s, String s1, String s2) {
         this.title=s;
@@ -49,13 +51,6 @@ public class Article implements Serializable {
         this.img = img;
     }
 
-    public Date getTimestamps() {
-        return timestamps;
-    }
-
-    public void setTimestamps(Date timestamps) {
-        this.timestamps = timestamps;
-    }
 
     public String getContent() {
         return content;
@@ -72,6 +67,14 @@ public class Article implements Serializable {
     public void setCategory(String category) {
         this.category = category;
     }
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
+
 
     @Override
     public String toString() {
@@ -80,7 +83,7 @@ public class Article implements Serializable {
                 ", title='" + title + '\'' +
                 ", img='" + img + '\'' +
                 ", content='" + content + '\'' +
-                ", timestamps=" + timestamps +
+                ", createdAt=" + createdAt +
                 '}';
     }
 
